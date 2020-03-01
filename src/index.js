@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import AppHeader from "./components/Header/app-header";
+import './index.scss';
+import Center from "./components/Center/center";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+    const todoData = [
+        { label: 'Drink coffee', important: false, id: 1 },
+        { label: 'I know React', important: true, id: 2 },
+        { label: 'I am working as React Developer', important: true, id: 3 }
+    ];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    return (
+        <div className="main">
+            <AppHeader/>
+            <Center todos={todoData} />
+        </div>
+    );
+}
+
+ReactDOM.render(<App/>,
+    document.getElementById('root'));

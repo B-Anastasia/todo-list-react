@@ -1,0 +1,21 @@
+.list-item{
+display: flex;
+  justify-content: space-between;
+
+
+  .button svg{
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #53bffc;
+
+    transition: top 1s ease-out 5.5s ;
+    &:hover{
+      fill: red;
+
+    }
+  }
+  &--button{
+    display: flex;
+    align-items: center;
+  }
+}

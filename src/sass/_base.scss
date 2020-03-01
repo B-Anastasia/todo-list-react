@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
+@import "mixins";
+@import "variables";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem =10px ; 10px/16px= 62.5%
+
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; //8px/16=50%
+  }
+}
+
+body {
+  font-family: "Comfortaa", serif;
+  font-weight: 400;
+  color: $color-grey-dark-2;
+  //background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-light-second);
+  background-image: url("/img/bc.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  line-height: 2;
+}
+.main {
+  background-color: white;
+  border-radius: 0 0 .5rem .5rem;
+  box-shadow: 0 10px 10px -5px $color-primary-blue;
+  min-height: 40rem;
+  @include  center;
+}
+

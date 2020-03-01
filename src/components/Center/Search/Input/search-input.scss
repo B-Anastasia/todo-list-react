@@ -1,0 +1,22 @@
+@import "./../../../../sass/variables";
+
+.search-input{
+
+  input {
+    width: 100%;
+    background-color: $color-grey-light-2;
+    color: $color-grey-dark-2;
+    border: none;
+    padding: .7rem 1.5rem;
+    border-radius: 3px;
+    font-family: "Comfortaa", serif;
+
+    &:active, &:focus{
+      outline: none;
+    }
+
+    &::placeholder{
+      color: $color-grey-dark-3;
+    }
+  }
+}

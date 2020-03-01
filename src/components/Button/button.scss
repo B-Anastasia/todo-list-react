@@ -1,0 +1,20 @@
+.button {
+  background-color: transparent;
+  border-radius: .3rem;
+  margin:  .2rem;
+  border: .04rem solid transparent;
+
+  &:focus, &:hover {
+    outline: none;
+    pointer-events: none;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+    padding: 0 .3rem;
+  }
+}

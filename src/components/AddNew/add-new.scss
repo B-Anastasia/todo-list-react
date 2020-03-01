@@ -1,0 +1,22 @@
+@import "../../sass/variables";
+
+.new{
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: $bp-small)   {
+    justify-content: center;
+  }
+
+  .button{
+    &:hover {
+      border-color: greenyellow;
+    }
+
+    svg {
+      fill: greenyellow;
+    }
+  }
+}
