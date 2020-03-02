@@ -2,16 +2,13 @@
 
 .search-panel {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
-  margin-top: .5rem;
+  margin-top: 1rem;
   color: $color-grey-dark-2;
 
   @media only screen and (max-width: $bp-small)   {
-                  justify-content: center;
+    justify-content: center;
   }
-
 
   .button {
     &:hover {

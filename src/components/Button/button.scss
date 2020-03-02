@@ -1,13 +1,17 @@
+@import "./../../sass/variables";
+
 .button {
   background-color: transparent;
   border-radius: .3rem;
-  margin:  .2rem;
-  border: .04rem solid transparent;
+  margin:  .3rem;
+  border: .2rem solid transparent;
+  cursor: pointer;
+  transition: transform .2s, border-color .5s ease-in-out;
 
-  &:focus, &:hover {
+  &:focus{
     outline: none;
-    pointer-events: none;
   }
+
   &:active {
     transform: translateY(2px);
   }

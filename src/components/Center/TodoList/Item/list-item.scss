@@ -1,19 +1,21 @@
 .list-item{
-display: flex;
+  display: flex;
   justify-content: space-between;
+  font-size: 2rem;
+  font-family: 'Dancing Script',serif;
+  font-weight: 600;
 
-
-  .button svg{
+  svg{
     width: 2.5rem;
     height: 2.5rem;
     fill: #53bffc;
+    transition: fill .5s ease-out;
 
-    transition: top 1s ease-out 5.5s ;
-    &:hover{
+    &:focus,&:hover, &active{
       fill: red;
-
     }
   }
+
   &--button{
     display: flex;
     align-items: center;
