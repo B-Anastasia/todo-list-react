@@ -5,6 +5,9 @@
   font-family: 'Dancing Script',serif;
   font-weight: 600;
 
+
+
+
   svg{
     width: 3rem;
     height: 3rem;
@@ -24,4 +27,14 @@
     display: flex;
     align-items: center;
   }
+
+}
+.line{
+  span{
+    text-decoration-line: line-through;
+  }
+}
+
+.important{
+  color: #ff2700;
 }
