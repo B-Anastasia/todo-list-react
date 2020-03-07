@@ -6,47 +6,48 @@ import Button from "../../../Button/button";
 export default class ListItem extends Component {
 
     state = {
-        done:false
+        done: false,
+        important: false
     };
 
     toCrossOutText = () => {
-        if (this.state.done){
-            this.setState({
-                done:false
-            });
-        } else {
-            this.setState({
-                done:true
-            });
-        }
-
+        this.setState ( ({done}) => {
+            return{
+                done: !done
+            };
+        });
         console.log(`Click : ${this.props.label}`);
+    };
 
-    }
-
-
+    toDoLineImportant = () => {
+        this.setState(({important})=>{
+            return {
+                important: !important
+            }
+        });
+    };
 
     render() {
 
-        const {label, important = false} = this.props;
-        const {done} = this.state;
+        const {label, toDeleteItem} = this.props;
+        const {done, important} = this.state;
         let classes = "list-item";
-        if(done){
-            console.log(classes);
+        if (done) {
             classes += " line";
         }
-        const style = {
-            color: important ? 'tomato' : 'black'
-        };
-        const edit = [
-            {name: "important", path: "img/svg/warning.svg"},
-            {name: "bin", path: "img/svg/bin.svg"}
+        if (important) {
+            classes += " important";
+        }
 
-        ];
-        const buttons = edit.map((el) => <Button id={el.name} path={el.path}/>);
+        const edit=[
+        {id:"01", name: "important", path: "img/svg/warning.svg", function: this.toDoLineImportant},
+        {id:"02", name: "bin",path: "img/svg/bin.svg", function: toDeleteItem}
+    ];
+    const buttons = edit.map( (el)=> <Button key={el.id} id={el.name} path={el.path} function={el.function}/> )   ;
+
         return (
             <div className={classes}>
-                    <span style={style} onClick={this.toCrossOutText}>
+                    <span onClick={this.toCrossOutText}>
             {label}
                     </span>
                 <div className="list-item--button">

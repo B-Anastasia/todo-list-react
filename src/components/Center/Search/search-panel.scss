@@ -12,11 +12,11 @@
 
   .button {
     &:hover {
-      border-color: greenyellow;
+      border-color: $color-primary-green-light;
     }
 
     svg {
-      fill: greenyellow;
+      fill: $color-primary-green-light;
     }
   }
 }
