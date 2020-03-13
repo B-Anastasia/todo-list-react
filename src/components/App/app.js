@@ -55,7 +55,7 @@ export default class App extends Component {
             const index = todoData.findIndex((el)=> el.id===id);
             // 1. update object
             const item = todoData[index];
-            // const done = !todoData[index]['done'];
+            // const done = !todoData[index]['done']
             const newItem={...item,done: !item.done};
             //2. create new array
             const newArray = [
