@@ -47,37 +47,52 @@ export default class App extends Component {
         });
     };
 
-    onToggleImportant = (id) =>{
-        console.log(`Toggle IMPORTANT element ${id}`);
-    };
-    onToggleDone = (id) =>{
-        this.setState(({todoData})=>{
-            const index = todoData.findIndex((el)=> el.id===id);
-            // 1. update object
-            const item = todoData[index];
-            // const done = !todoData[index]['done'];
-            const newItem={...item,done: !item.done};
-            //2. create new array
-            const newArray = [
-                ...todoData.slice(0,index),
+    //Function to toggle property
+
+    toToggleProperty( arr, id, propertyName ){
+
+            const index = arr.findIndex( el => el.id === id );
+            const oldItem = arr[index];
+            const newItem = { ...oldItem, [propertyName]: !oldItem[propertyName]};     // 1. update object
+
+            return [                                                                 //2. create new array
+                ...arr.slice( 0, index),
                 newItem,
-                ...todoData.slice(index+1)
+                ...arr.slice( index + 1 )
             ];
-            return{
-               todoData : newArray
+    }
+
+    onToggleImportant = ( id ) => {
+
+        this.setState ( ( {todoData} ) => {
+            return {
+                todoData: this.toToggleProperty( todoData, id, 'important' )
+            };
+
+        });
+
+    };
+
+    onToggleDone = ( id ) => {
+
+        this.setState ( ( {todoData} ) => {
+            return {
+                todoData: this.toToggleProperty( todoData, id, 'done' )
             };
         });
-        console.log(`Toggle DONE element ${id}`);
     };
 
-
-
     render(){
+        const {todoData} = this.state;
+
+        const countDone = todoData.filter( el => el.done ).length;
+        const countToDo = todoData.length - countDone;
+
         return(
             <div className="main">
-                <AppHeader toDo={1} done={3}/>
+                <AppHeader toDo={countToDo} done={countDone}/>
                 <Center
-                    todos={this.state.todoData}
+                    todos={todoData}
                     toDeleteItem={this.toDeleteItem}
                     toAddItem={this.toAddItem}
                     onToggleImportant={this.onToggleImportant}
@@ -87,3 +102,48 @@ export default class App extends Component {
         );
     }
 };
+
+// onToggleImportant = (id) =>{
+//
+//     this.setState(({todoData})=>{
+//
+//         const index = todoData.findIndex( el => el.id === id );
+//         const oldItem = todoData[index];
+//         const newItem = { ...oldItem, important: !oldItem.important};
+//
+//         const newArary = [
+//             ...todoData.slice( 0, index),
+//             newItem,
+//             ...todoData.slice( index + 1 )
+//         ];
+//
+//         return {
+//           todoData: newArary
+//         };
+//
+//     });
+//
+//     console.log(`Toggle IMPORTANT element ${id}`);
+// };
+
+// onToggleDone = (id) =>{
+//     this.setState(({todoData})=>{
+//
+//         const index = todoData.findIndex((el)=> el.id===id);
+//         // 1. update object
+//         const item = todoData[index];
+//         // const done = !todoData[index]['done'];
+//         const newItem={...item,done: !item.done};
+//         //2. create new array
+//         const newArray = [
+//             ...todoData.slice(0,index),
+//             newItem,
+//             ...todoData.slice(index+1)
+//         ];
+//         return{
+//            todoData : newArray
+//         };
+//     });
+//     // console.log(`Toggle DONE element ${id}`);
+// };
+

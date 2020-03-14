@@ -9,6 +9,6 @@ const AppHeader = (props) => {
             <h1>Todo List</h1>
             <Done toDo={props.toDo} done={props.done}/>
         </div> );
-}
+};
 
 export default AppHeader;
