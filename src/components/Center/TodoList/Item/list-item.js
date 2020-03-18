@@ -14,15 +14,15 @@ const ListItem =({label, toDeleteItem, onToggleDone, onToggleImportant, done, im
         }
 
         const edit=[
-        {id:"01", name: "important", path: "img/svg/warning.svg", function: onToggleImportant},
-        {id:"02", name: "bin",path: "img/svg/bin.svg", function: toDeleteItem}
+        {name: "important", path: "img/svg/warning.svg", function: onToggleImportant},
+        {name: "bin", path: "img/svg/bin.svg", function: toDeleteItem}
     ];
-    const buttons = edit.map( (el)=> <Button key={el.id} id={el.name} path={el.path} function={el.function}/> )   ;
+    const buttons = edit.map( (el)=> <Button key={el.name} className='button' path={el.path} function={el.function}/> )   ;
 
         return (
             <div className={classes}>
                     <span onClick={onToggleDone}>
-            {label}
+                        {label}
                     </span>
                 <div className="list-item--button">
                     {buttons}

@@ -5,7 +5,7 @@ import './button.scss';
 const Button = (props) => {
 
     return (
-             <button id={props.id} className="button" onClick={props.function}>
+             <button className={props.className} onClick={props.function}>
                  <ReactSVG  src={props.path} />
              </button>
     );

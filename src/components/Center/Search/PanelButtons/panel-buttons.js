@@ -1,18 +1,24 @@
 import React,{Component} from 'react';
 import Button from "../../../Button/button";
+import './panel-buttons.scss';
 
 export default class PanelButtons extends Component {
 
+    buttons=[
+        {name: "all", path: "img/svg/list2.svg"},
+        {name: "active", path: "img/svg/checkmark2.svg"},
+        {name: "done", path: "img/svg/checkmark.svg"}
+
+    ];
+
     render(){
+        const {filter, onFilterChange} = this.props;
 
-        const add=[
-            {name: "list", path: "img/svg/list2.svg" }    ,
-            {name: "active",path: "img/svg/checkmark2.svg"},
-            {name: "done",path: "img/svg/checkmark.svg" }
-
-        ];
-
-        const buttons = add.map( (el) => <Button key={el.name} path={el.path}/> );
+        const buttons = this.buttons.map( (el) => {
+            const isActive = filter === el.name;
+            const clazz = isActive? 'button active':'button';
+            return (<Button key={el.name} className={clazz} path={el.path} function={ ()=>onFilterChange(el.name) }/>);
+        });
         return (
             <div>
                 {buttons}
