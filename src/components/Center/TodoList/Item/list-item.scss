@@ -1,12 +1,7 @@
 .list-item{
   display: flex;
   justify-content: space-between;
-  //font-size: 2rem;
   font-family: 'Dancing Script',serif;
-  font-weight: 600;
-
-
-
 
   svg{
     width: 3.2rem;
@@ -19,7 +14,6 @@
     }
 
     &:focus, &:active{
-
     }
   }
 
@@ -38,5 +32,5 @@
 .important{
   color: #ff2700;
   font-weight: 600;
-  font-size: 3.1rem;
+  font-size: 3.6rem;
 }

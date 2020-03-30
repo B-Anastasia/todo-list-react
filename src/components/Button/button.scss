@@ -12,6 +12,13 @@
     outline: none;
   }
 
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+
+
   &:active {
     transform: translateY(2px);
   }

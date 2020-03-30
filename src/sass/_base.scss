@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import "mixins";
 @import "variables";
 * {
@@ -22,9 +24,7 @@ html {
 
 body {
   font-weight: 600;
-  font-family: 'Dancing Script', serif;
-  //font-family: "Comfortaa", sans-serif;
-
+  font-family: 'Dancing Script', cursive;
   font-size: 3rem;
   color: $color-grey-dark-2;
   background: url("/img/bc.jpg") no-repeat 50% 0;
@@ -38,17 +38,16 @@ body {
 }
 }
 .main {
-  background-color: #f5f5f5cf;   //#f5f5f5ba
+  background-color: #f5f5f5cf;
   border-radius: .2rem;
   min-height: 40rem;
   width: 55rem;
-  padding: 2.5rem;
+  padding: 5.5rem;
 
   @media only screen and (max-width: $bp-small) {
     padding: 1.3rem;
     width: 100%;
     margin: 15% auto;
-  //background-color: #f5f5f5cf;
   }
   @media only screen and (min-width: 601px) {
     @include  center;

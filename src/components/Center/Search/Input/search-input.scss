@@ -8,15 +8,16 @@
     width: 100%;
   }
   input {
-    font-size: 2.5rem;
+    font-size: 2rem;
     width: 100%;
     background-color: $color-grey-light-2;
     color: $color-grey-dark-2;
     border: none;
-    padding: .7rem 1.5rem;
+    padding: 1rem 2rem;
     border-radius: 3px;
-    font-family: 'Dancing Script', serif;
-    letter-spacing: .2rem;
+    font-family: 'Comic Neue', coursive;
+    font-weight: 300;
+    //letter-spacing: .2rem;
 
     &:active, &:focus{
       outline: none;

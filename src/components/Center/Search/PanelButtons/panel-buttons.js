@@ -12,7 +12,7 @@ export default class PanelButtons extends Component {
     ];
 
     render(){
-        const {filter, onFilterChange} = this.props;
+        const {filter, onFilterChange, className} = this.props;
 
         const buttons = this.buttons.map( (el) => {
             const isActive = filter === el.name;
@@ -20,7 +20,7 @@ export default class PanelButtons extends Component {
             return (<Button key={el.name} className={clazz} path={el.path} function={ ()=>onFilterChange(el.name) }/>);
         });
         return (
-            <div>
+            <div className={className}>
                 {buttons}
             </div>
         );

@@ -22,7 +22,7 @@ export default class SearchPanel extends Component {
         return (
             <div className="search-panel">
                 <SearchInput type="text" value={this.state.term} placeholder={search} function={this.onSearchChange}/>
-                <PanelButtons filter={this.props.filter} onFilterChange={this.props.onFilterChange}/>
+                <PanelButtons className='buttons' filter={this.props.filter} onFilterChange={this.props.onFilterChange}/>
             </div>
         );
     }
